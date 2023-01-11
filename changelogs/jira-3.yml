@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1683498692-1
+      author: HHill
+      changes:
+        - addColumn:
+            tableName: Products
+            columns:
+            - column:
+                type: varchar(20)
+                name: sku

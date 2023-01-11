@@ -11,3 +11,11 @@ databaseChangeLog:
       file: changelogs/jira-2.yml
   - include:
       file: changelogs/sample.data.yml
+    - changeSet:
+          id: tag-v1.0.1
+          author: HHill
+          changes:
+              - tagDatabase:
+                    tag: v1.0.1
+    - include:
+          file: changelogs/jira-3.yml

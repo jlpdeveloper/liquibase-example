@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: tag-v1.0.0
-      author: JPotts
+      author: HHill
       changes:
         - tagDatabase:
             tag: v1.0.0

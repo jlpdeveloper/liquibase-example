@@ -1,16 +1,16 @@
 databaseChangeLog:
-  - changeSet:
-      id: tag-v1.0.0
-      author: JPotts
-      changes:
-        - tagDatabase:
-            tag: v1.0.0
-  - include:
-      file: changelogs/jira-1.yml
-  - include:
-      file: changelogs/jira-2.yml
-  - include:
-      file: changelogs/sample.data.yml
+    - changeSet:
+          id: tag-v1.0.0
+          author: JPotts
+          changes:
+              - tagDatabase:
+                    tag: v1.0.0
+    - include:
+          file: changelogs/jira-1.yml
+    - include:
+          file: changelogs/jira-2.yml
+    - include:
+          file: changelogs/sample.data.yml
     - changeSet:
           id: tag-v1.0.1
           author: HHill

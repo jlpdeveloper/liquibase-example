@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: tag-v1.0.0
+      author: JPotts
+      changes:
+        - tagDatabase:
+            version: v1.0.0
+  - include:
+      file: changelogs/jira-1.yml

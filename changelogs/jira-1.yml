@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1673398692-1
+      author: HHill
+      changes:
+        - createTable:
+            tableName: Products
+            columns:
+            - column:
+                type: int
+                name: id
+                constraints:
+                  primaryKey: true
+            - column:
+                type: varchar(50)
+                name: name
+            - column:
+                type: int
+                name: price
+  - changeSet:
+      id: 1673398692-2
+      author: HHill
+      changes:
+        - createTable:
+            tableName: Inventory
+            columns: 
+            - column:
+                type: int
+                name: id
+                constraints:
+                  primaryKey: true
+            - column:
+                type: int
+                name: product_id
+                constraints:
+                  referencedTableName: Products
+                  referencedColumnNames: id
+                  foreignKeyName: fk_product_id
+            - column:
+                type: varchar(20)
+                name: location

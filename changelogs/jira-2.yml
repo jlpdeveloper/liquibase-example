@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1673498692-1
+      author: DGribble
+      changes:
+        - addColumn:
+            tableName: Inventory
+            columns:
+            - column:
+                type: int
+                name: quantity
+  - changeSet:
+      id: 1673498692-4
+      author: DGribble
+      changes:
+        - createProcedure:
+            replaceIfExists: true
+            procedureName: p_getProductsByPriceAsc
+            path: sql/p_getProductsByPriceAsc.sql

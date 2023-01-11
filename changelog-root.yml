@@ -7,3 +7,7 @@ databaseChangeLog:
             version: v1.0.0
   - include:
       file: changelogs/jira-1.yml
+  - include:
+      file: changelogs/jira-2.yml
+  - include:
+      file: changelogs/sample.data.yml

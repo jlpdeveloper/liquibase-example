@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1673498692-2
+      author: DGribble
+      changes:
+        - loadUpdateData:
+            file: data/development.products.csv
+            tableName: Products
+            primaryKey: id
+  - changeSet:
+      id: 1673498692-3
+      author: DGribble
+      changes:
+        - loadUpdateData:
+            file: data/development.inventory.csv
+            tableName: Inventory
+            primaryKey: id

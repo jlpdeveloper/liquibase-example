@@ -2,6 +2,10 @@ databaseChangeLog:
   - changeSet:
       id: 1683498692-1
       author: HHill
+      preConditions:
+        - onFail: HALT
+        - tableExists:
+            tableName: Products
       changes:
         - addColumn:
             tableName: Products
@@ -12,6 +16,7 @@ databaseChangeLog:
   - changeSet: 
       id: 1683498692-2
       author: HHill
+      contextFilter: setup
       changes:
         - loadUpdateData:
             file: data/jira-3/development.products.csv

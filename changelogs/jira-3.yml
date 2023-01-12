@@ -9,3 +9,11 @@ databaseChangeLog:
             - column:
                 type: varchar(20)
                 name: sku
+  - changeSet: 
+      id: 1683498692-2
+      author: HHill
+      changes:
+        - loadUpdateData:
+            file: data/jira-3/development.products.csv
+            tableName: Products
+            primaryKey: id

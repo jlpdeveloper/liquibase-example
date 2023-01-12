@@ -17,3 +17,11 @@ databaseChangeLog:
             file: data/jira-3/development.products.csv
             tableName: Products
             primaryKey: id
+  - changeSet:
+      id : 1683498692-3
+      author: HHill
+      changes:
+        - createProcedure:
+            replaceIfExists: true
+            procedureName: p_getProductsBySKU
+            path: sql/jira-3/p_getProductsBySKU.sql

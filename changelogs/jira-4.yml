@@ -2,7 +2,7 @@ databaseChangeLog:
   - changeSet:
       id: 1673993426-1
       author: JBoomhauer
-      comments: Create new orders table 
+      comment: Create new orders table 
       changes:
         - createTable:
             tableName: Order
@@ -30,7 +30,7 @@ databaseChangeLog:
   - changeSet:
       id: 1673993426-2
       author: JBoomhauer
-      comments: Add index for customer id
+      comment: Add index for customer id
       changes:
         - createIndex:
             tableName: Order

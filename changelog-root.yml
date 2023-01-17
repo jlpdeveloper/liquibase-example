@@ -32,3 +32,6 @@ databaseChangeLog:
     - include: 
          file: changelogs/jira-4.yml
          labels: v2.0.0
+    - include:
+         file: changelogs/jira-5.yml
+         labels: v2.0.0

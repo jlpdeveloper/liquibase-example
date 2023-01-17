@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1673995675-1
+      author: HHill
+      changes:
+        - addColumn:
+            tableName: Customer
+            columns:
+              - column:
+                  name: Phone
+                  type: varchar(50)
+  - changeSet:
+      id: 1673995675-2
+      author: HHill
+      changes:
+        - addColumn:
+            tableName: Products
+            columns:
+              - column: 
+                  name: Retired
+                  type: bool
+                  defaultValue: false

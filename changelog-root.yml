@@ -22,3 +22,13 @@ databaseChangeLog:
     - include:
           file: changelogs/jira-3.yml
           labels: v1.0.1
+    - changeSet:
+         id: tag-v2.0.0
+         author: JBoomhauer
+         labels: v2.0.0
+         changes:
+            - tagDatabase:
+                  tag: v2.0.0
+    - include: 
+         file: changelogs/jira-4.yml
+         labels: v2.0.0

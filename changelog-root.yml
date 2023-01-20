@@ -2,16 +2,20 @@ databaseChangeLog:
     - changeSet:
           id: tag-v1.0.0
           author: HHill
+          labels: v1.0.0
           changes:
               - tagDatabase:
                     tag: v1.0.0
     - include:
           file: changelogs/jira-1.yml
+          labels: v1.0.0
     - include:
           file: changelogs/jira-2.yml
+          labels: v1.0.0
     - include:
           file: changelogs/sample.data.yml
           contextFilter: setup
+          labels: v1.0.0
     - changeSet:
           id: tag-v1.0.1
           author: HHill

@@ -1,0 +1,34 @@
+<html><body><pre>
+databaseChangeLog:
+  - changeSet:
+      id: 1683498692-1
+      author: HHill
+      preConditions:
+        - onFail: HALT
+        - tableExists:
+            tableName: Products
+      changes:
+        - addColumn:
+            tableName: Products
+            columns:
+            - column:
+                type: varchar(20)
+                name: sku
+  - changeSet: 
+      id: 1683498692-2
+      author: HHill
+      contextFilter: setup
+      changes:
+        - loadUpdateData:
+            file: data/jira-3/development.products.csv
+            tableName: Products
+            primaryKey: id
+  - changeSet:
+      id : 1683498692-3
+      author: HHill
+      changes:
+        - createProcedure:
+            replaceIfExists: true
+            procedureName: p_getProductsBySKU
+            path: sql/jira-3/p_getProductsBySKU.sql
+</pre></body></html>

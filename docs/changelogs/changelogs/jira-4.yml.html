@@ -1,0 +1,90 @@
+<html><body><pre>
+databaseChangeLog:
+  - changeSet:
+      id: 1673993426-1
+      author: JBoomhauer
+      comment: Create new orders table 
+      changes:
+        - createTable:
+            tableName: Order
+            columns:
+              - column:
+                  name: Id
+                  type: int
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: Date
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: Amount
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: CustomerId
+                  type: int
+                  constraints: 
+                    nullable: false
+  - changeSet:
+      id: 1673993426-2
+      author: JBoomhauer
+      comment: Add index for customer id
+      changes:
+        - createIndex:
+            tableName: Order
+            clustered: false
+            indexName: idx_orders_by_customerid
+            columns:
+              - column:
+                  name: CustomerId
+  - changeSet:
+      id: 1673993426-3
+      author: JBoomhauer
+      changes:
+        - createTable:
+            tableName: Customer
+            columns:
+              - column:
+                  name: Id
+                  type: int
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: Name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column: 
+                  name: Address
+                  type: varchar(200)
+              - column:
+                  name: IsDeleted
+                  type: bool
+                  defaultValue: false
+  - changeSet: 
+      id: 1673993426-4
+      author: JBoomhauer
+      contextFilter: setup
+      preConditions:
+        onFail: WARN
+        and:
+          - tableExists: 
+              tableName: Order
+          - tableExists: 
+              tableName: Customer
+          - rowCount:
+              tableName: Customer
+              expectedRows: 0
+      changes:
+        - loadUpdateData:
+            file: data/development.orders.csv
+            tableName: Order
+            primaryKey: Id
+        - loadUpdateData:
+            file: data/development.customers.csv
+            tableName: Customer
+            primaryKey: Id
+</pre></body></html>
